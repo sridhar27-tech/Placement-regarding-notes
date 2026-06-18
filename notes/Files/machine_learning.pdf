@@ -1,0 +1,1044 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612.0000000000001137 792.]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 3429
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0 g
+240.8800000000000239 735.3070866141732722 Td
+(Machine learning) Tj
+ET
+BT
+/F3 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 692.7874015748031979 Td
+(Generated on: 18/6/2026) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 664.4409448818897772 Td
+(# Machine Learning Notes) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 626.0409206929133461 Td
+(**Machine Learning \(ML\)** is a branch of Artificial Intelligence that allows computers to learn) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 606.8409085984251305 Td
+(patterns from data and make predictions or decisions without being explicitly programmed.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 568.4408844094486994 Td
+(---) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 530.040860220472382 Td
+(## Core Concepts) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 491.6408360314959509 Td
+(- **Data**: Raw information used for training. Includes **Features** \(inputs\) and **Labels**) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 472.4408239370077354 Td
+(\(outputs\).) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 453.2408118425195198 Td
+(- **Model**: Mathematical function that learns patterns from data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 434.0407997480313043 Td
+(- **Training**: Process of feeding data to the model so it adjusts its parameters to minimize) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 414.8407876535431456 Td
+(errors.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 395.6407755590549868 Td
+(- **Inference**: Using the trained model to make predictions on new data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 376.4407634645667713 Td
+(- **Dataset Split**:) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 357.2407513700786126 Td
+(  - Training Set \(70-80%\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 338.0407392755904539 Td
+(  - Validation Set \(for tuning\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 318.8407271811022952 Td
+(  - Test Set \(final evaluation\)) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 280.4407029921259777 Td
+(---) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 242.0406788031496035 Td
+(## Types of Machine Learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 203.6406546141732861 Td
+(### 1. Supervised Learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 184.4406425196851842 Td
+(Model learns from labeled data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 165.2406304251969686 Td
+(- **Regression**: Predict continuous values \(e.g., house price\).) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 146.0406183307088668 Td
+(- **Classification**: Predict categories \(e.g., spam/not spam\).) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 107.6405941417324357 Td
+(### 2. Unsupervised Learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 88.4405820472443338 Td
+(Model finds patterns in unlabeled data.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+290.3000000000000682 28.3464566929134207 Td
+(Page 1) Tj
+ET
+endstream
+endobj
+5 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612.0000000000001137 792.]
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 3118
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F2 16 Tf
+18.3999999999999986 TL
+0 g
+240.8800000000000239 735.3070866141732722 Td
+(Machine learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 692.7874015748031979 Td
+(- **Clustering**: Group similar data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 673.5873894803149824 Td
+(- **Dimensionality Reduction**.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 635.1873652913385513 Td
+(### 3. Reinforcement Learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 615.9873531968503357 Td
+(Agent learns by trial and error using rewards.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 577.5873290078740183 Td
+(### 4. Semi-Supervised Learning) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 558.3873169133858028 Td
+(Uses mostly unlabeled + some labeled data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 519.9872927244093717 Td
+(---) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 481.5872685354329406 Td
+(## Key Concepts) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 443.1872443464565663 Td
+(- **Overfitting**: Model performs well on training data but poorly on new data.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 423.9872322519683507 Td
+(- **Underfitting**: Model is too simple.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 404.787220157480192 Td
+(- **Bias-Variance Tradeoff**: Balance between underfitting and overfitting.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 385.5872080629920333 Td
+(- **Regularization**: L1 \(Lasso\) and L2 \(Ridge\) to prevent overfitting.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 366.3871959685038746 Td
+(- **Cross-Validation**: K-Fold CV for reliable evaluation.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 327.9871717795275003 Td
+(---) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 289.5871475905511829 Td
+(## Loss Functions) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 251.1871234015749224 Td
+(Loss functions measure how well the model’s predictions match the actual data. The goal of) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 231.9871113070867068 Td
+(training is to **minimize** the loss.) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 193.5870871181103894 Td
+(### Common Loss Functions) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 155.187062929134072 Td
+(**1. Mean Squared Error \(MSE\)** – Used in Regression  ) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 135.9870508346458564 Td
+($$) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 116.7870387401577545 Td
+(\\text{MSE} = \\frac{1}{n} \\sum_{i=1}^{n} \(y_i - \\hat{y}_i\)^2) Tj
+ET
+BT
+/F1 12 Tf
+13.7999999999999989 TL
+0 g
+56.6929133858267775 97.587026645669539 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+290.3000000000000682 28.3464566929134207 Td
+(Page 2) Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612.0000000000001137 792.]
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 3075
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 735.3070866141732722 Td
+(**2. Mean Absolute Error \(MAE\)** – Used in Regression  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 716.1070745196850567 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 696.9070624251968411 Td
+(\\text{MAE} = \\frac{1}{n} \\sum_{i=1}^{n} |y_i - \\hat{y}_i|) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 677.7070503307086256 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 639.3070261417323081 Td
+(**3. Binary Cross-Entropy \(Log Loss\)** – Used in Binary Classification  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 620.1070140472440926 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 600.907001952755877 Td
+(\\text{BCE} = -\\frac{1}{n} \\sum_{i=1}^{n} \\left[ y_i \\log\(\\hat{y}_i\) + \(1 - y_i\) \\log\(1 - \\hat{y}_i\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 581.7069898582676615 Td
+(\\right]) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 562.5069777637795596 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 524.1069535748031285 Td
+(**4. Categorical Cross-Entropy** – Used in Multi-class Classification  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 504.9069414803148561 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 485.7069293858266974 Td
+(\\text{CCE} = -\\sum_{i=1}^{n} \\sum_{c=1}^{C} y_{i,c} \\log\(\\hat{y}_{i,c}\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 466.5069172913384818 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 428.1068931023621076 Td
+(**5. Hinge Loss** – Used in Support Vector Machines \(SVM\)  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 408.9068810078739489 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 389.7068689133857902 Td
+(\\text{Hinge} = \\max\(0, 1 - y_i \\cdot \\hat{y}_i\)) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 370.5068568188976315 Td
+($$) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 332.1068326299212572 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 293.7068084409449398 Td
+(## Evaluation Metrics) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 255.3067842519685655 Td
+(| Task           | Metrics                              |) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 236.1067721574804636 Td
+(|----------------|--------------------------------------|) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 216.9067600629922481 Td
+(| Regression     | MSE, RMSE, MAE, R² Score            |) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 197.7067479685041462 Td
+(| Classification | Accuracy, Precision, Recall, F1-Score, AUC-ROC |) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 178.5067358740159307 Td
+(| Clustering     | Silhouette Score                    |) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 140.1067116850396133 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 101.7066874960632958 Td
+(## Machine Learning Pipeline) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+290.3000000000000682 28.3464566929134207 Td
+(Page 3) Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612.0000000000001137 792.]
+/Contents 10 0 R
+>>
+endobj
+10 0 obj
+<<
+/Length 2611
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 735.3070866141732722 Td
+(1. Problem Definition  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 716.1070745196850567 Td
+(2. Data Collection & EDA  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 696.9070624251968411 Td
+(3. Data Preprocessing  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 677.7070503307086256 Td
+(4. Feature Engineering  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 658.5070382362205237 Td
+(5. Model Selection & Training  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 639.3070261417323081 Td
+(6. Hyperparameter Tuning  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 620.1070140472440926 Td
+(7. Evaluation  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 600.907001952755877 Td
+(8. Deployment & Monitoring  ) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 562.5069777637795596 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 524.1069535748031285 Td
+(## Popular Algorithms) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 485.7069293858266974 Td
+(- **Classical**: Linear Regression, Decision Trees, Random Forest, SVM, KNN.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 466.5069172913384818 Td
+(- **Ensemble**: XGBoost, LightGBM.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 447.3069051968502663 Td
+(- **Deep Learning**: Neural Networks, CNNs, RNNs/LSTMs, Transformers.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 408.9068810078739489 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 370.5068568188976315 Td
+(## Tools & Libraries) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 332.1068326299212572 Td
+(- **Python**: scikit-learn, pandas, NumPy, Matplotlib, TensorFlow, PyTorch.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 293.7068084409449398 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 255.3067842519685655 Td
+(## Applications) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 216.9067600629922481 Td
+(- Recommendation Systems, Image Recognition, NLP, Fraud Detection, Healthcare,) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 197.7067479685041462 Td
+(Autonomous Vehicles.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 159.3067237795278288 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 120.9066995905515114 Td
+(## Challenges) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 82.506675401575194 Td
+(- Data Quality, Overfitting, Interpretability, Bias & Fairness, Computational Cost.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+290.3000000000000682 28.3464566929134207 Td
+(Page 4) Tj
+ET
+endstream
+endobj
+11 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 612.0000000000001137 792.]
+/Contents 12 0 R
+>>
+endobj
+12 0 obj
+<<
+/Length 460
+>>
+stream
+0.5670000000000001 w
+0 G
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 716.1070745196850567 Td
+(**Tip**: Start with scikit-learn and Andrew Ng’s Machine Learning course.) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 677.7070503307086256 Td
+(---) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+56.6929133858267775 658.5070382362205237 Td
+(*Brief Revision Notes - Updated June 2026*) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0 g
+290.3000000000000682 28.3464566929134207 Td
+(Page 5) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R ]
+/Count 5
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+19 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+20 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+21 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+22 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+23 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+24 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+25 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+26 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 13 0 R
+/F2 14 0 R
+/F3 15 0 R
+/F4 16 0 R
+/F5 17 0 R
+/F6 18 0 R
+/F7 19 0 R
+/F8 20 0 R
+/F9 21 0 R
+/F10 22 0 R
+/F11 23 0 R
+/F12 24 0 R
+/F13 25 0 R
+/F14 26 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+27 0 obj
+<<
+/Producer (jsPDF 2.5.1)
+/CreationDate (D:20260618093912+05'30')
+>>
+endobj
+28 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 29
+0000000000 65535 f 
+0000013577 00000 n 
+0000015424 00000 n 
+0000000015 00000 n 
+0000000136 00000 n 
+0000003617 00000 n 
+0000003738 00000 n 
+0000006908 00000 n 
+0000007029 00000 n 
+0000010156 00000 n 
+0000010278 00000 n 
+0000012942 00000 n 
+0000013065 00000 n 
+0000013659 00000 n 
+0000013785 00000 n 
+0000013916 00000 n 
+0000014050 00000 n 
+0000014188 00000 n 
+0000014312 00000 n 
+0000014441 00000 n 
+0000014573 00000 n 
+0000014709 00000 n 
+0000014837 00000 n 
+0000014964 00000 n 
+0000015093 00000 n 
+0000015226 00000 n 
+0000015328 00000 n 
+0000015677 00000 n 
+0000015763 00000 n 
+trailer
+<<
+/Size 29
+/Root 28 0 R
+/Info 27 0 R
+/ID [ <68BC5C306869414B18FB5F173DFA67EE> <68BC5C306869414B18FB5F173DFA67EE> ]
+>>
+startxref
+15867
+%%EOF
