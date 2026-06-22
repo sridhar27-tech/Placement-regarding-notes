@@ -76,9 +76,19 @@ print("Sample Mean (SRS):", simple_random_sample.mean())
 print("Sampling Error:", abs(population.mean() - simple_random_sample.mean()))
 
 
-
 Stratified Sampling
-import pandas as pd
+Definition: Population is divided into homogeneous subgroups (strata) based on a key characteristic, then random samples are drawn from each stratum proportional to its size.
+Best Used When: Population has distinct subgroups (e.g., age groups, gender, classes in classification).
+Mathematical Formula:
+Let there be ( K ) strata. For stratum ( h ):
+
+Stratum size: ( N_h )
+Sample size from stratum: ( n_h = n \times \frac{N_h}{N} )
+
+Stratified Sample Mean:
+$$\bar{x}_{str} = \sum_{h=1}^{K} W_h \bar{x}_h \quad \text{where} \quad W_h = \frac{N_h}{N}$$
+Python Example (Stratified Sampling)
+PythonCopyimport pandas as pd
 import numpy as np
 
 # Create population with strata (e.g., customer segments)
@@ -106,9 +116,18 @@ strat_sample = stratified_sample(df, 'segment', 600)
 print("Original Segment Distribution:\n", df['segment'].value_counts(normalize=True))
 print("\nSample Segment Distribution:\n", strat_sample['segment'].value_counts(normalize=True))
 
-
 Cluster Sampling
-import numpy as np
+Definition: Population is divided into clusters (groups). A random sample of clusters is selected, and then all units within the selected clusters are included (one-stage) or a sample is taken (two-stage).
+Best Used When: Population is geographically spread out or natural clusters exist (e.g., schools, cities, warehouses).
+Mathematical Representation:
+
+Number of clusters in population: ( M )
+Number of clusters selected: ( m )
+Average cluster size: ( \bar{N} )
+
+Two-stage Cluster Sampling is common in practice.
+Python Example (Cluster Sampling)
+PythonCopyimport numpy as np
 import pandas as pd
 
 # Simulate population with clusters (e.g., 100 schools, each with ~100 students)
@@ -136,7 +155,11 @@ print("Cluster Sample Mean Score:", cluster_sample['score'].mean())
 print("Sample Size:", len(cluster_sample))
 
 Systematic Sampling
-def systematic_sample(population, sample_size):
+Definition: Select every ( k )-th member from the population after a random starting point.
+Formula:
+$k = \frac{N}{n}$
+Python Implementation
+PythonCopydef systematic_sample(population, sample_size):
     N = len(population)
     k = N // sample_size
     start = np.random.randint(0, k)
@@ -147,6 +170,78 @@ def systematic_sample(population, sample_size):
 sys_sample = systematic_sample(population['score'].values, 500)
 print("Systematic Sample Mean:", sys_sample.mean())
 
+Comparison of Sampling Methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MethodBias RiskCostRepresentativenessBest ForSimple RandomLowMediumGoodHomogeneous populationsStratifiedVery LowMediumExcellentHeterogeneous populationsClusterMediumLowModerateGeographically dispersedSystematicLow-MediumLowGoodOrdered lists
+Advantages of Stratified:
+
+More precise than SRS when strata are internally homogeneous.
+
+Advantages of Cluster:
+
+Cheaper and more practical for large-scale surveys.
+
+
+Sampling in Machine Learning
+
+Train-Test Split (Simple Random)
+Stratified K-Fold Cross Validation (for imbalanced classification)
+Bootstrap Sampling (Bagging, Random Forest)
+Undersampling / Oversampling in imbalanced datasets
+Reservoir Sampling for streaming data
+
+Stratified Train-Test Split Example
+PythonCopyfrom sklearn.model_selection import train_test_split
+
+# Assuming df has target column
+X = df.drop('target', axis=1)
+y = df['target']
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=42
+)
+
+print("Target distribution preserved:")
+print(y_train.value_counts(normalize=True))
 
 Conclusion
 Choosing the right sampling technique is critical for reliable statistical inference and robust machine learning models.
@@ -160,4 +255,6 @@ A well-designed sample leads to better models, more accurate predictions, and tr
 Recommended Reading:
 
 "The Elements of Statistical Learning"
+"Sampling: Design and Analysis" by Sharon Lohr
+
 "Sampling: Design and Analysis" by Sharon Lohr
