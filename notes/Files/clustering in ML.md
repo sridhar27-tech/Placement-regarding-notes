@@ -56,6 +56,7 @@ srs_sample = np.random.choice(population, size=sample_size, replace=False)
 
 print("Population Mean:", population.mean().round(3))
 print("SRS Sample Mean:", srs_sample.mean().round(3))
+
 Stratified Sampling
 Divides the population into homogeneous strata, then takes random samples from each stratum proportionally.
 Mathematical Formula:
@@ -90,11 +91,6 @@ print("\nSample Age Distribution:\n", strat_sample['age_group'].value_counts(nor
 
 Cluster Sampling
 Population is divided into clusters. Randomly select entire clusters (or samples within them).
-Types:
-
-One-stage: Take all units from selected clusters
-Two-stage: Take a sample from selected clusters
-
 Python Example (Two-stage Cluster Sampling)
 PythonCopyimport numpy as np
 import pandas as pd
@@ -135,9 +131,6 @@ PythonCopydef systematic_sampling(data, sample_size):
     indices = np.arange(start, N, k)[:sample_size]
     return data.iloc[indices] if isinstance(data, pd.DataFrame) else data[indices]
 
-# Usage
-# sys_sample = systematic_sampling(df, 2000)
-
 Bootstrap Sampling
 Sampling with replacement to estimate variability and confidence intervals.
 PythonCopydef bootstrap_mean(data, n_bootstraps=10000):
@@ -169,6 +162,7 @@ def reservoir_sampling(stream, k):
 Advanced Sampling for Imbalanced Data
 PythonCopyfrom imblearn.over_sampling import SMOTE
 from sklearn.datasets import make_classification
+import numpy as np
 
 X, y = make_classification(n_samples=10000, weights=[0.9, 0.1], random_state=42)
 
