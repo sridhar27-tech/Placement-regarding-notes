@@ -175,6 +175,59 @@ print("After SMOTE:", np.bincount(y_res))
 
 Comparison of Sampling Methods
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 TechniqueBiasVarianceCostBest Use CaseSimple RandomLowMediumMediumHomogeneous dataStratifiedVery LowLowMediumHeterogeneous / ClassificationClusterMediumHigherLowGeographically grouped dataSystematicLowLowLowOrdered listsBootstrapLowControlledMediumEnsembles & UncertaintyReservoirLowLowLowStreaming / Big Data
 
 Sampling in Machine Learning Practice
@@ -194,3 +247,4 @@ Recommended Resources:
 
 The Elements of Statistical Learning (Hastie et al.)
 Sampling: Design and Analysis (Sharon Lohr)
+
