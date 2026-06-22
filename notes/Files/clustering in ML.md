@@ -1,8 +1,8 @@
 # Sampling Techniques in Statistics and Machine Learning
 
-**A Comprehensive Guide with Mathematical Examples and Python Code**
+**Extended Comprehensive Guide with Mathematical Examples and Python Code**
 
-Sampling is a fundamental concept in statistics and machine learning. It allows us to draw conclusions about a large population from a smaller subset of data, saving time and computational resources while maintaining statistical validity.
+Sampling is crucial for statistical inference, efficient model training, and handling large-scale data in machine learning.
 
 ---
 
@@ -13,248 +13,190 @@ Sampling is a fundamental concept in statistics and machine learning. It allows 
 4. [Stratified Sampling](#stratified-sampling)
 5. [Cluster Sampling](#cluster-sampling)
 6. [Systematic Sampling](#systematic-sampling)
-7. [Comparison of Sampling Methods](#comparison-of-sampling-methods)
-8. [Sampling in Machine Learning](#sampling-in-machine-learning)
-9. [Conclusion](#conclusion)
+7. [Bootstrap Sampling](#bootstrap-sampling)
+8. [Reservoir Sampling](#reservoir-sampling)
+9. [Advanced Sampling for Imbalanced Data](#advanced-sampling-for-imbalanced-data)
+10. [Comparison of Sampling Methods](#comparison-of-sampling-methods)
+11. [Sampling in Machine Learning Practice](#sampling-in-machine-learning-practice)
+12. [Conclusion](#conclusion)
 
 ---
 
 ## Introduction to Sampling
 
-**Population** vs **Sample**:
-- Population: Complete set of all possible observations.
-- Sample: Subset of the population used for analysis.
+**Population** vs **Sample**  
+- **Population**: Entire set of interest.  
+- **Sample**: Subset used for analysis.
 
-**Goal**: Obtain a representative sample that minimizes **sampling bias** and **sampling error**.
+**Main Goals**:
+- Reduce computational cost
+- Enable statistical inference
+- Minimize sampling bias and variance
 
-### Key Concepts
-- **Sampling Frame**: List of all units in the population.
-- **Sampling Error**: Difference between sample statistic and population parameter.
-- **Bias**: Systematic error in sampling method.
-
----
-
-## Key Sampling Techniques
-
-### Probability Sampling (Random)
-- Every unit has a known, non-zero probability of being selected.
-- Allows statistical inference.
-
-### Non-Probability Sampling
-- Convenience, Purposive, Snowball, etc. (Not covered in depth here).
+**Types of Sampling**:
+- **Probability Sampling** (preferred for inference)
+- **Non-Probability Sampling**
 
 ---
 
 ## Simple Random Sampling (SRS)
 
-**Definition**: Every member of the population has an equal chance of being selected.
+Every unit has an equal probability of being selected.
 
-**Mathematical Representation**:
-For a population of size \( N \), sample of size \( n \):
-
-Probability of selecting any unit = \( \frac{n}{N} \)
-
-**Sample Mean**:
-$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i$$
-
-**Python Implementation**
+**Python Example**
 
 ```python
 import numpy as np
-import pandas as pd
 
-# Create sample population
 np.random.seed(42)
-population = np.random.normal(50, 15, 10000)  # 10,000 data points
+population = np.random.normal(100, 20, 50000)
 
-# Simple Random Sampling
-sample_size = 500
-simple_random_sample = np.random.choice(population, size=sample_size, replace=False)
+sample_size = 1000
+srs_sample = np.random.choice(population, size=sample_size, replace=False)
 
-print("Population Mean:", population.mean())
-print("Sample Mean (SRS):", simple_random_sample.mean())
-print("Sampling Error:", abs(population.mean() - simple_random_sample.mean()))
-
-
+print("Population Mean:", population.mean().round(3))
+print("SRS Sample Mean:", srs_sample.mean().round(3))
 Stratified Sampling
-Definition: Population is divided into homogeneous subgroups (strata) based on a key characteristic, then random samples are drawn from each stratum proportional to its size.
-Best Used When: Population has distinct subgroups (e.g., age groups, gender, classes in classification).
+Divides the population into homogeneous strata, then takes random samples from each stratum proportionally.
 Mathematical Formula:
-Let there be ( K ) strata. For stratum ( h ):
-
-Stratum size: ( N_h )
-Sample size from stratum: ( n_h = n \times \frac{N_h}{N} )
-
-Stratified Sample Mean:
-$$\bar{x}_{str} = \sum_{h=1}^{K} W_h \bar{x}_h \quad \text{where} \quad W_h = \frac{N_h}{N}$$
-Python Example (Stratified Sampling)
+For ( K ) strata:
+$$n_h = n \cdot \frac{N_h}{N}, \quad h = 1,2,\dots,K$$
+$$\bar{x}_{str} = \sum_{h=1}^{K} W_h \bar{x}_h, \quad W_h = \frac{N_h}{N}$$
+Extended Python Example
 PythonCopyimport pandas as pd
 import numpy as np
 
-# Create population with strata (e.g., customer segments)
-data = {
-    'id': range(10000),
-    'segment': np.random.choice(['Low', 'Medium', 'High'], 10000, p=[0.5, 0.3, 0.2]),
-    'value': np.random.normal(100, 30, 10000)
-}
-df = pd.DataFrame(data)
+# Create realistic dataset
+np.random.seed(42)
+n = 100000
+df = pd.DataFrame({
+    'age_group': np.random.choice(['18-30', '31-45', '46-60', '60+'], n, p=[0.3, 0.35, 0.25, 0.1]),
+    'income': np.random.normal(60000, 20000, n),
+    'region': np.random.choice(['North', 'South', 'East', 'West'], n)
+})
 
-# Stratified Sampling
-def stratified_sample(df, strata_col, sample_size):
-    strata = df[strata_col].unique()
-    sample = pd.DataFrame()
-    n_per_strata = sample_size // len(strata)
-    
-    for stratum in strata:
-        stratum_df = df[df[strata_col] == stratum]
-        sample_stratum = stratum_df.sample(n=min(n_per_strata, len(stratum_df)), random_state=42)
-        sample = pd.concat([sample, sample_stratum])
-    return sample
+def stratified_sample(df, strata_cols, sample_size, random_state=42):
+    df = df.copy()
+    df['_strata'] = df[strata_cols].astype(str).agg('_'.join, axis=1)
+    sample = df.groupby('_strata', group_keys=False).apply(
+        lambda x: x.sample(min(len(x), max(1, int(sample_size * len(x)/len(df)))), random_state=random_state)
+    )
+    return sample.drop(columns=['_strata'])
 
-strat_sample = stratified_sample(df, 'segment', 600)
+strat_sample = stratified_sample(df, ['age_group', 'region'], 2000)
 
-print("Original Segment Distribution:\n", df['segment'].value_counts(normalize=True))
-print("\nSample Segment Distribution:\n", strat_sample['segment'].value_counts(normalize=True))
+print("Population Age Distribution:\n", df['age_group'].value_counts(normalize=True))
+print("\nSample Age Distribution:\n", strat_sample['age_group'].value_counts(normalize=True))
 
 Cluster Sampling
-Definition: Population is divided into clusters (groups). A random sample of clusters is selected, and then all units within the selected clusters are included (one-stage) or a sample is taken (two-stage).
-Best Used When: Population is geographically spread out or natural clusters exist (e.g., schools, cities, warehouses).
-Mathematical Representation:
+Population is divided into clusters. Randomly select entire clusters (or samples within them).
+Types:
 
-Number of clusters in population: ( M )
-Number of clusters selected: ( m )
-Average cluster size: ( \bar{N} )
+One-stage: Take all units from selected clusters
+Two-stage: Take a sample from selected clusters
 
-Two-stage Cluster Sampling is common in practice.
-Python Example (Cluster Sampling)
+Python Example (Two-stage Cluster Sampling)
 PythonCopyimport numpy as np
 import pandas as pd
 
-# Simulate population with clusters (e.g., 100 schools, each with ~100 students)
 np.random.seed(42)
+# 500 clusters
 clusters = []
-for i in range(100):  # 100 clusters
-    cluster_size = np.random.randint(80, 120)
-    cluster_data = pd.DataFrame({
-        'cluster_id': [i] * cluster_size,
-        'score': np.random.normal(70 + i%10, 10, cluster_size)
+for i in range(500):
+    size = np.random.randint(50, 300)
+    cluster = pd.DataFrame({
+        'cluster_id': i,
+        'value': np.random.normal(50 + (i % 30), 12, size)
     })
-    clusters.append(cluster_data)
+    clusters.append(cluster)
 
 population = pd.concat(clusters, ignore_index=True)
 
-# One-stage Cluster Sampling
-num_clusters_to_sample = 15
-selected_clusters = np.random.choice(population['cluster_id'].unique(), 
-                                   size=num_clusters_to_sample, replace=False)
+# Two-stage Cluster Sampling
+n_clusters = 40
+selected_clusters = np.random.choice(population['cluster_id'].unique(), n_clusters, replace=False)
 
 cluster_sample = population[population['cluster_id'].isin(selected_clusters)]
 
-print("Population Mean Score:", population['score'].mean())
-print("Cluster Sample Mean Score:", cluster_sample['score'].mean())
-print("Sample Size:", len(cluster_sample))
+# Second stage: sample 30% from each selected cluster
+final_sample = cluster_sample.groupby('cluster_id', group_keys=False).apply(
+    lambda x: x.sample(frac=0.3, random_state=42)
+)
+
+print("Population Mean:", population['value'].mean().round(3))
+print("Cluster Sample Mean:", final_sample['value'].mean().round(3))
 
 Systematic Sampling
-Definition: Select every ( k )-th member from the population after a random starting point.
-Formula:
-$k = \frac{N}{n}$
-Python Implementation
-PythonCopydef systematic_sample(population, sample_size):
-    N = len(population)
+Select every ( k )-th unit after a random starting point.
+PythonCopydef systematic_sampling(data, sample_size):
+    N = len(data)
     k = N // sample_size
     start = np.random.randint(0, k)
     indices = np.arange(start, N, k)[:sample_size]
-    return population[indices]
+    return data.iloc[indices] if isinstance(data, pd.DataFrame) else data[indices]
 
-# Using earlier population
-sys_sample = systematic_sample(population['score'].values, 500)
-print("Systematic Sample Mean:", sys_sample.mean())
+# Usage
+# sys_sample = systematic_sampling(df, 2000)
+
+Bootstrap Sampling
+Sampling with replacement to estimate variability and confidence intervals.
+PythonCopydef bootstrap_mean(data, n_bootstraps=10000):
+    bootstraps = np.random.choice(data, size=(n_bootstraps, len(data)), replace=True)
+    means = bootstraps.mean(axis=1)
+    return means.mean(), np.percentile(means, [2.5, 97.5])
+
+sample = np.random.normal(100, 15, 500)
+mean_est, ci = bootstrap_mean(sample)
+
+print("Bootstrap Mean:", mean_est.round(3))
+print("95% Confidence Interval:", ci.round(3))
+
+Reservoir Sampling
+Useful for streaming data or unknown population size.
+PythonCopyimport random
+
+def reservoir_sampling(stream, k):
+    reservoir = []
+    for i, item in enumerate(stream):
+        if i < k:
+            reservoir.append(item)
+        else:
+            j = random.randint(0, i)
+            if j < k:
+                reservoir[j] = item
+    return reservoir
+
+Advanced Sampling for Imbalanced Data
+PythonCopyfrom imblearn.over_sampling import SMOTE
+from sklearn.datasets import make_classification
+
+X, y = make_classification(n_samples=10000, weights=[0.9, 0.1], random_state=42)
+
+print("Original class distribution:", np.bincount(y))
+
+smote = SMOTE(random_state=42)
+X_res, y_res = smote.fit_resample(X, y)
+
+print("After SMOTE:", np.bincount(y_res))
 
 Comparison of Sampling Methods
 
+TechniqueBiasVarianceCostBest Use CaseSimple RandomLowMediumMediumHomogeneous dataStratifiedVery LowLowMediumHeterogeneous / ClassificationClusterMediumHigherLowGeographically grouped dataSystematicLowLowLowOrdered listsBootstrapLowControlledMediumEnsembles & UncertaintyReservoirLowLowLowStreaming / Big Data
 
+Sampling in Machine Learning Practice
 
+Use stratify=y in train_test_split
+Use StratifiedKFold for cross-validation
+Bootstrap in Bagging / Random Forest
+SMOTE / ADASYN for imbalanced classes
+TimeSeriesSplit for time series data
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-MethodBias RiskCostRepresentativenessBest ForSimple RandomLowMediumGoodHomogeneous populationsStratifiedVery LowMediumExcellentHeterogeneous populationsClusterMediumLowModerateGeographically dispersedSystematicLow-MediumLowGoodOrdered lists
-Advantages of Stratified:
-
-More precise than SRS when strata are internally homogeneous.
-
-Advantages of Cluster:
-
-Cheaper and more practical for large-scale surveys.
-
-
-Sampling in Machine Learning
-
-Train-Test Split (Simple Random)
-Stratified K-Fold Cross Validation (for imbalanced classification)
-Bootstrap Sampling (Bagging, Random Forest)
-Undersampling / Oversampling in imbalanced datasets
-Reservoir Sampling for streaming data
-
-Stratified Train-Test Split Example
-PythonCopyfrom sklearn.model_selection import train_test_split
-
-# Assuming df has target column
-X = df.drop('target', axis=1)
-y = df['target']
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, stratify=y, random_state=42
-)
-
-print("Target distribution preserved:")
-print(y_train.value_counts(normalize=True))
 
 Conclusion
-Choosing the right sampling technique is critical for reliable statistical inference and robust machine learning models.
-
-Use Stratified Sampling when dealing with important subgroups.
-Use Cluster Sampling when cost and logistics are major constraints.
-Always validate your sample against known population characteristics.
-
+Mastering sampling techniques leads to more robust, efficient, and statistically sound machine learning models.
 Key Takeaway:
-A well-designed sample leads to better models, more accurate predictions, and trustworthy insights.
-Recommended Reading:
+The quality of your model depends heavily on the quality of your sample.
+Recommended Resources:
 
-"The Elements of Statistical Learning"
-"Sampling: Design and Analysis" by Sharon Lohr
-
-"Sampling: Design and Analysis" by Sharon Lohr
+The Elements of Statistical Learning (Hastie et al.)
+Sampling: Design and Analysis (Sharon Lohr)
